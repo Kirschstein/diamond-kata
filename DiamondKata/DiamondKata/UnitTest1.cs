@@ -71,36 +71,51 @@ namespace DiamondKata
             {
                 return new[]
                 {
-                    "   A   ",
+                    PadAForD(),
                     "  B B  ",
                     " C   C ",
                     "D     D",
                     " C   C ",
                     "  B B  ",
-                    "   A   ",
+                    PadAForD(),
                 };
             }            
             if (input == "C")
             {
                 return new[]
                 {
-                    "  A  ",
+                    PadAForC(),
                     " B B ",
                     "C   C",
                     " B B ",
-                    "  A  ",
+                    PadAForC(),
                 };
             }            
             if (input == "B")
             {
                 return new[]
                 {
-                    " A ",
+                    PadAForB(),
                     "B B",
-                    " A ",
+                    PadAForB(),
                 };
             }
             return new [] { "A" };
+        }
+
+        private static string PadAForD()
+        {
+            return "   A   ";
+        }
+
+        private static string PadAForC()
+        {
+            return "  A  ";
+        }
+
+        private static string PadAForB()
+        {
+            return " A ";
         }
     }
 }
