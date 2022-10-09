@@ -108,12 +108,12 @@ namespace DiamondKata
 
         private static string BRowForD()
         {
-            return "  B B  ";
+            return "B B".PadLeft(5, ' ').PadRight(7, ' ');
         }
 
         private static string BRowForC()
         {
-            return " B B ";
+            return "B B".PadLeft(4, ' ').PadRight(5, ' ');
         }
 
         private static string BRowForB()
