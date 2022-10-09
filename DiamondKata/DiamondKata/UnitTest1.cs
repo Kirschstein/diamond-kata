@@ -73,13 +73,13 @@ namespace DiamondKata
                 var bPadding = 5;
                 return new[]
                 {
-                    PadA(aPadding),
-                    PadB(bPadding),
+                    Pad("A", aPadding),
+                    Pad("B B", bPadding),
                     " C   C ",
                     "D     D",
                     " C   C ",
-                    PadB(bPadding),
-                    PadA(aPadding),
+                    Pad("B B", bPadding),
+                    Pad("A", aPadding),
                 };
             }            
             if (input == "C")
@@ -88,11 +88,11 @@ namespace DiamondKata
                 var bPadding = 4;
                 return new[]
                 {
-                    PadA(aPadding),
-                    PadB(bPadding),
+                    Pad("A", aPadding),
+                    Pad("B B", bPadding),
                     "C   C",
-                    PadB(bPadding),
-                    PadA(aPadding),
+                    Pad("B B", bPadding),
+                    Pad("A", aPadding),
                 };
             }            
             if (input == "B")
@@ -101,22 +101,12 @@ namespace DiamondKata
                 var bPadding = 3;
                 return new[]
                 {
-                    PadA(aPadding),
-                    PadB(bPadding),
-                    PadA(aPadding),
+                    Pad("A", aPadding),
+                    Pad("B B", bPadding),
+                    Pad("A", aPadding),
                 };
             }
             return new [] { "A" };
-        }
-
-        private static string PadB(int leftWidth)
-        {
-            return Pad("B B", leftWidth);
-        }
-
-        private static string PadA(int leftPadding)
-        {
-            return Pad("A", leftPadding);
         }
 
         private static string Pad(string str, int leftPadding)
