@@ -69,8 +69,8 @@ namespace DiamondKata
         {
             if (input == "D")
             {
-                var aPadding = 4;
                 var bPadding = 5;
+                var aPadding = bPadding - 1;
                 return new[]
                 {
                     Pad("A", aPadding),
@@ -84,8 +84,8 @@ namespace DiamondKata
             }            
             if (input == "C")
             {
-                var aPadding = 3;
                 var bPadding = 4;
+                var aPadding = bPadding - 1;
                 return new[]
                 {
                     Pad("A", aPadding),
@@ -97,8 +97,8 @@ namespace DiamondKata
             }            
             if (input == "B")
             {
-                var aPadding = 2;
                 var bPadding = 3;
+                var aPadding = bPadding - 1;
                 return new[]
                 {
                     Pad("A", aPadding),
