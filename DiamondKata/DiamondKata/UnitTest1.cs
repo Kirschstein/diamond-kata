@@ -71,33 +71,33 @@ namespace DiamondKata
             {
                 return new[]
                 {
-                    Pad("A", 4 - "A".Length),
-                    Pad("B B", 5 - "B B".Length),
-                    Pad("C   C", 6 - "C   C".Length),
-                    Pad("D     D", 7 - "D     D".Length),
-                    Pad("C   C", 6 - "C   C".Length),
-                    Pad("B B", 5 - "B B".Length),
-                    Pad("A", 4 - "A".Length),
+                    Pad("A", 4 - 1),
+                    Pad("B B", 5 - 3),
+                    Pad("C   C", 6 - 5),
+                    Pad("D     D", 7 - 7),
+                    Pad("C   C", 6 - 5),
+                    Pad("B B", 5 - 3),
+                    Pad("A", 4 - 1),
                 };
             }            
             if (input == "C")
             {
                 return new[]
                 {
-                    Pad("A", 3 - "A".Length),
-                    Pad("B B", 4 - "B B".Length),
-                    Pad("C   C", 5 - "C   C".Length),
-                    Pad("B B", 4 - "B B".Length),
-                    Pad("A", 3 - "A".Length),
+                    Pad("A", 3 - 1),
+                    Pad("B B", 4 - 3),
+                    Pad("C   C", 5 - 5),
+                    Pad("B B", 4 - 3),
+                    Pad("A", 3 - 1),
                 };
             }            
             if (input == "B")
             {
                 return new[]
                 {
-                    Pad("A", 2 - "A".Length),
-                    Pad("B B", 3 - "B B".Length),
-                    Pad("A", 2 - "A".Length),
+                    Pad("A", 2 - 1),
+                    Pad("B B", 3 - 3),
+                    Pad("A", 2 - 1),
                 };
             }
             return new [] { "A" };
