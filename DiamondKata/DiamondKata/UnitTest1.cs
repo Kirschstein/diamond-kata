@@ -105,8 +105,9 @@ namespace DiamondKata
 
         private static string Pad(string str, int leftPadding)
         {
-            var rightPadding = leftPadding + (leftPadding - str.Length);
-            return str.PadLeft(leftPadding, ' ').PadRight(rightPadding, ' ');
+            var whitespaceLength = leftPadding - str.Length;
+            var whitespace = "".PadRight(whitespaceLength, ' ');
+            return $"{whitespace}{str}{whitespace}";
         }
     }
 }
