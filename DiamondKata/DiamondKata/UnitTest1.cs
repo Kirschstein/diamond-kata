@@ -109,14 +109,14 @@ namespace DiamondKata
         private static string BRowForD()
         {
             var leftWidth = 5;
-            var totalWidth = 7;
+            var totalWidth = leftWidth + 2;
             return "B B".PadLeft(leftWidth, ' ').PadRight(totalWidth, ' ');
         }
 
         private static string BRowForC()
         {
             var leftWidth = 4;
-            var totalWidth = 5;
+            var totalWidth = leftWidth + 1;
             return "B B".PadLeft(leftWidth, ' ').PadRight(totalWidth, ' ');
         }
 
