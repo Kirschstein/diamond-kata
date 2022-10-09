@@ -105,17 +105,17 @@ namespace DiamondKata
 
         private static string PadAForD()
         {
-            return "   A   ";
+            return "A".PadLeft(4, ' ').PadRight(7, ' ');
         }
 
         private static string PadAForC()
         {
-            return "  A  ";
+            return "A".PadLeft(3, ' ').PadRight(5, ' ');
         }
 
         private static string PadAForB()
         {
-            return " A ";
+            return "A".PadLeft(2, ' ').PadRight(3, ' ');
         }
     }
 }
