@@ -69,41 +69,35 @@ namespace DiamondKata
         {
             if (input == "D")
             {
-                var bPadding = 5;
-                var aPadding = bPadding - 1;
                 return new[]
                 {
-                    Pad("A", aPadding),
-                    Pad("B B", bPadding),
+                    Pad("A", 4),
+                    Pad("B B", 5),
                     Pad("C   C", 6),
                     Pad("D     D", 7),
                     Pad("C   C", 6),
-                    Pad("B B", bPadding),
-                    Pad("A", aPadding),
+                    Pad("B B", 5),
+                    Pad("A", 4),
                 };
             }            
             if (input == "C")
             {
-                var bPadding = 4;
-                var aPadding = bPadding - 1;
                 return new[]
                 {
-                    Pad("A", aPadding),
-                    Pad("B B", bPadding),
+                    Pad("A", 3),
+                    Pad("B B", 4),
                     Pad("C   C", 5),
-                    Pad("B B", bPadding),
-                    Pad("A", aPadding),
+                    Pad("B B", 4),
+                    Pad("A", 3),
                 };
             }            
             if (input == "B")
             {
-                var bPadding = 3;
-                var aPadding = bPadding - 1;
                 return new[]
                 {
-                    Pad("A", aPadding),
-                    Pad("B B", bPadding),
-                    Pad("A", aPadding),
+                    Pad("A", 2),
+                    Pad("B B", 3),
+                    Pad("A", 2),
                 };
             }
             return new [] { "A" };
