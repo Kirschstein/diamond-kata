@@ -118,7 +118,7 @@ namespace DiamondKata
 
         private static string BRowForB()
         {
-            return "B B";
+            return "B B".PadLeft(3, ' ').PadRight(3, ' ');
         }
 
         private static string PadA(int leftPadding)
