@@ -73,11 +73,11 @@ namespace DiamondKata
                 return new[]
                 {
                     PadA(leftPadding),
-                    "  B B  ",
+                    BRowForD(),
                     " C   C ",
                     "D     D",
                     " C   C ",
-                    "  B B  ",
+                    BRowForD(),
                     PadA(leftPadding),
                 };
             }            
@@ -87,9 +87,9 @@ namespace DiamondKata
                 return new[]
                 {
                     PadA(leftPadding),
-                    " B B ",
+                    BRowForC(),
                     "C   C",
-                    " B B ",
+                    BRowForC(),
                     PadA(leftPadding),
                 };
             }            
@@ -99,11 +99,26 @@ namespace DiamondKata
                 return new[]
                 {
                     PadA(leftPadding),
-                    "B B",
+                    BRowForB(),
                     PadA(leftPadding),
                 };
             }
             return new [] { "A" };
+        }
+
+        private static string BRowForD()
+        {
+            return "  B B  ";
+        }
+
+        private static string BRowForC()
+        {
+            return " B B ";
+        }
+
+        private static string BRowForB()
+        {
+            return "B B";
         }
 
         private static string PadA(int leftPadding)
