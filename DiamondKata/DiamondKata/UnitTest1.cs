@@ -111,14 +111,18 @@ namespace DiamondKata
 
         private static string PadB(int leftWidth)
         {
-            var totalWidth = leftWidth + (leftWidth - 3);
-            return "B B".PadLeft(leftWidth, ' ').PadRight(totalWidth, ' ');
+            return Pad("B B", leftWidth);
         }
 
         private static string PadA(int leftPadding)
         {
-            var rightPadding = leftPadding + (leftPadding - 1);
-            return "A".PadLeft(leftPadding, ' ').PadRight(rightPadding, ' ');
+            return Pad("A", leftPadding);
+        }
+
+        private static string Pad(string str, int leftPadding)
+        {
+            var rightPadding = leftPadding + (leftPadding - str.Length);
+            return str.PadLeft(leftPadding, ' ').PadRight(rightPadding, ' ');
         }
     }
 }
