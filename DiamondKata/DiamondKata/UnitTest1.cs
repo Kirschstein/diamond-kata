@@ -75,9 +75,9 @@ namespace DiamondKata
                 {
                     Pad("A", aPadding),
                     Pad("B B", bPadding),
-                    " C   C ",
-                    "D     D",
-                    " C   C ",
+                    Pad("C   C", 6),
+                    Pad("D     D", 7),
+                    Pad("C   C", 6),
                     Pad("B B", bPadding),
                     Pad("A", aPadding),
                 };
@@ -90,7 +90,7 @@ namespace DiamondKata
                 {
                     Pad("A", aPadding),
                     Pad("B B", bPadding),
-                    "C   C",
+                    Pad("C   C", 5),
                     Pad("B B", bPadding),
                     Pad("A", aPadding),
                 };
