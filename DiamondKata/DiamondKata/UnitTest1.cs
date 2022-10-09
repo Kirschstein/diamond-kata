@@ -70,58 +70,43 @@ namespace DiamondKata
             if (input == "D")
             {
                 var leftPadding = 4;
+                var leftWidth = 5;
                 return new[]
                 {
                     PadA(leftPadding),
-                    BRowForD(),
+                    PadB(leftWidth),
                     " C   C ",
                     "D     D",
                     " C   C ",
-                    BRowForD(),
+                    PadB(leftWidth),
                     PadA(leftPadding),
                 };
             }            
             if (input == "C")
             {
                 var leftPadding = 3;
+                var leftWidth = 4;
                 return new[]
                 {
                     PadA(leftPadding),
-                    BRowForC(),
+                    PadB(leftWidth),
                     "C   C",
-                    BRowForC(),
+                    PadB(leftWidth),
                     PadA(leftPadding),
                 };
             }            
             if (input == "B")
             {
                 var leftPadding = 2;
+                var leftWidth = 3;
                 return new[]
                 {
                     PadA(leftPadding),
-                    BRowForB(),
+                    PadB(leftWidth),
                     PadA(leftPadding),
                 };
             }
             return new [] { "A" };
-        }
-
-        private static string BRowForD()
-        {
-            var leftWidth = 5;
-            return PadB(leftWidth);
-        }
-
-        private static string BRowForC()
-        {
-            var leftWidth = 4;
-            return PadB(leftWidth);
-        }
-
-        private static string BRowForB()
-        {
-            var leftWidth = 3;
-            return PadB(leftWidth);
         }
 
         private static string PadB(int leftWidth)
