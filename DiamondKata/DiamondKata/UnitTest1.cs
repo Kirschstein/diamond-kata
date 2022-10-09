@@ -69,56 +69,41 @@ namespace DiamondKata
         {
             if (input == "D")
             {
+                var leftPadding = 4;
                 return new[]
                 {
-                    PadAForD(),
+                    PadA(leftPadding),
                     "  B B  ",
                     " C   C ",
                     "D     D",
                     " C   C ",
                     "  B B  ",
-                    PadAForD(),
+                    PadA(leftPadding),
                 };
             }            
             if (input == "C")
             {
+                var leftPadding = 3;
                 return new[]
                 {
-                    PadAForC(),
+                    PadA(leftPadding),
                     " B B ",
                     "C   C",
                     " B B ",
-                    PadAForC(),
+                    PadA(leftPadding),
                 };
             }            
             if (input == "B")
             {
+                var leftPadding = 2;
                 return new[]
                 {
-                    PadAForB(),
+                    PadA(leftPadding),
                     "B B",
-                    PadAForB(),
+                    PadA(leftPadding),
                 };
             }
             return new [] { "A" };
-        }
-
-        private static string PadAForD()
-        {
-            var leftPadding = 4;
-            return PadA(leftPadding);
-        }
-
-        private static string PadAForC()
-        {
-            var leftPadding = 3;
-            return PadA(leftPadding);
-        }
-
-        private static string PadAForB()
-        {
-            var leftPadding = 2;
-            return PadA(leftPadding);
         }
 
         private static string PadA(int leftPadding)
