@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+
 namespace DiamondKata;
 
 public static class Diamond
@@ -9,45 +12,35 @@ public static class Diamond
         if (input == "A")
             return new [] { "A" };
 
+        return GetStringsAsEnumerable(input).ToArray();
+    }
+
+    private static IEnumerable<string> GetStringsAsEnumerable(string input)
+    {
+        var index = Alphabet.IndexOf(input[0]);
+        yield return PadOuter("A", index);
 
         if (input == "D")
         {
-            var index = Alphabet.IndexOf(input[0]);
+            yield return PadOuter(PadInner("B"), index - 1);
+            yield return PadOuter(PadInner("C"), index - 2);
+            yield return PadOuter(PadInner("D"), index - index);
+            yield return PadOuter(PadInner("C"), index - 2);
+            yield return PadOuter(PadInner("B"), index - 1);
 
-            return new[]
-            {
-                PadOuter("A", index), 
-                PadOuter(PadInner("B"), index - 1), 
-                PadOuter(PadInner("C"), index - 2), 
-                PadOuter(PadInner("D"), index - index), 
-                PadOuter(PadInner("C"), index - 2), 
-                PadOuter(PadInner("B"), index - 1), 
-                PadOuter("A", index),
-            };
-        }            
+        }
         else if (input == "C")
         {
-            var index = Alphabet.IndexOf(input[0]);
-
-            return new[]
-            {
-                PadOuter("A", index),
-                PadOuter(PadInner("B"), 1), 
-                PadOuter(PadInner("C"), 0), 
-                PadOuter(PadInner("B"), 1), 
-                PadOuter("A", index),
-            };
-        }            
+            yield return PadOuter(PadInner("B"), 1);
+            yield return PadOuter(PadInner("C"), 0);
+            yield return PadOuter(PadInner("B"), 1);
+        }
         else
         {
-            var index = Alphabet.IndexOf(input[0]);
-            return new[]
-            {
-                PadOuter("A", index),
-                PadOuter(PadInner("B"), 0), 
-                PadOuter("A", index),
-            };
+            yield return PadOuter(PadInner("B"), 0);
         }
+
+        yield return PadOuter("A", index);
     }
 
     private static string PadInner(string letter)
