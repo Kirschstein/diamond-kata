@@ -23,25 +23,25 @@ public static class Diamond
 
         if (index == 3)
         {
-            yield return PadOuter(PadInner(Alphabet[index - 2]), index - 1);
-            yield return PadOuter(PadInner(Alphabet[index - 1]), index - 2);
+            yield return PadOuter(PadInner(Alphabet[3 - 2]), 3 - 1);
+            yield return PadOuter(PadInner(Alphabet[3 - 1]), 3 - 2);
         }
         if (index == 2)
         {
-            yield return PadOuter(PadInner(Alphabet[index - 1]), index - 1); 
+            yield return PadOuter(PadInner(Alphabet[2 - 1]), 2 - 1); 
         }
 
         yield return PadOuter(PadInner(input), index - index);
 
         if (index == 2)
         {
-            yield return PadOuter(PadInner(Alphabet[index - 1]), index - 1);
+            yield return PadOuter(PadInner(Alphabet[2 - 1]), 2 - 1);
         }
 
         if (index == 3)
         {
-            yield return PadOuter(PadInner(Alphabet[index - 1]), index - 2);
-            yield return PadOuter(PadInner(Alphabet[index - 2]), index - 1);
+            yield return PadOuter(PadInner(Alphabet[3 - 1]), 3 - 2);
+            yield return PadOuter(PadInner(Alphabet[3 - 2]), 3 - 1);
         }
 
         yield return PadOuter("A", index);
