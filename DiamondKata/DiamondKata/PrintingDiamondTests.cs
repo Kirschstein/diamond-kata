@@ -6,7 +6,6 @@ namespace DiamondKata
 {
     public class PrintingDiamondTests
     {
-
         [Test]
         public void input_a()
         {

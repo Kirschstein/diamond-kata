@@ -19,17 +19,17 @@ public static class Diamond
     private static IEnumerable<string> GetDiamondLines(string targetLetter)
     {
         var index = Alphabet.IndexOf(targetLetter[0]);
-        foreach (var row in CreateRowsUpToInput(index)) yield return row;
-        yield return CreateInnerRow(targetLetter);
-        foreach (var row in CreateRowsDownFromInput(index)) yield return row;
+        foreach (var row in CreateTopRows(index)) yield return row;
+        yield return CreateMiddleRow(targetLetter);
+        foreach (var row in CreateBottomRows(index)) yield return row;
     }
 
-    private static string CreateInnerRow(string input)
+    private static string CreateMiddleRow(string input)
     {
         return PadOuter(PadInner(input), 0);
     }
 
-    private static IEnumerable<string> CreateRowsDownFromInput(int targetLetter)
+    private static IEnumerable<string> CreateBottomRows(int targetLetter)
     {
         var i = 1;
 
@@ -42,7 +42,7 @@ public static class Diamond
         yield return PadOuter("A", targetLetter);
     }
 
-    private static IEnumerable<string> CreateRowsUpToInput(int targetLetter)
+    private static IEnumerable<string> CreateTopRows(int targetLetter)
     {
         yield return PadOuter("A", targetLetter);
 
@@ -57,19 +57,18 @@ public static class Diamond
 
     private static string PadInner(string letter)
     {
-        var letterValue = letter[0];
-        return PadInner(letterValue);
+        return PadInner(letter[0]);
     }
 
-    private static string PadInner(char letterValue)
+    private static string PadInner(char letter)
     {
         var bValue = "B"[0];
-        var index = Alphabet.IndexOf(letterValue);
+        var index = Alphabet.IndexOf(letter);
 
-        var innerWidth = letterValue - bValue + index;
+        var innerWidth = letter - bValue + index;
 
         var whitespace = "".PadRight(innerWidth, ' ');
-        return $"{letterValue}{whitespace}{letterValue}";
+        return $"{letter}{whitespace}{letter}";
     }
 
     private static string PadOuter(string str, int paddingLength)
