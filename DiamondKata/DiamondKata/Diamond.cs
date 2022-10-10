@@ -18,6 +18,7 @@ public static class Diamond
     private static IEnumerable<string> GetStringsAsEnumerable(string input)
     {
         var index = Alphabet.IndexOf(input[0]);
+
         yield return PadOuter("A", index);
 
         if (input == "D")
@@ -31,13 +32,13 @@ public static class Diamond
         }
         else if (input == "C")
         {
-            yield return PadOuter(PadInner("B"), 1);
-            yield return PadOuter(PadInner("C"), 0);
-            yield return PadOuter(PadInner("B"), 1);
+            yield return PadOuter(PadInner("B"), index - 1);
+            yield return PadOuter(PadInner("C"), index - index);
+            yield return PadOuter(PadInner("B"), index - 1);
         }
         else
         {
-            yield return PadOuter(PadInner("B"), 0);
+            yield return PadOuter(PadInner("B"), index - index);
         }
 
         yield return PadOuter("A", index);
