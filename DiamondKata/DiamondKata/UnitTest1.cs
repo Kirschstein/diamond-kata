@@ -111,18 +111,19 @@ namespace DiamondKata
             var innerWidth = 0;
             var bValue = "B"[0];
             var charValue = str[0];
+            var index = "ABCD".IndexOf(charValue);
 
             if (str == "B")
             {
-                innerWidth = charValue - bValue + 1;
+                innerWidth = charValue - bValue + index;
             }
             if (str == "C")
             {
-                innerWidth = charValue  - bValue + 2;
+                innerWidth = charValue  - bValue + index;
             }
             if (str == "D")
             {
-                innerWidth = charValue - bValue + 3;
+                innerWidth = charValue - bValue + index;
             }
             
             var whitespace = "".PadRight(innerWidth, ' ');
