@@ -1,12 +1,8 @@
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-
-namespace DiamondKata;
+namespace Diamond;
 
 public static class Diamond
 {
-    private static string Alphabet = "ABCDE";
+    private static string Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     public static string[] GetLines(string targetLetter)
     {

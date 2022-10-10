@@ -9,7 +9,7 @@ namespace DiamondKata
         [Test]
         public void input_a()
         {
-            var result = Diamond.GetLines("A");
+            var result = Diamond.Diamond.GetLines("A");
 
             Assert.Multiple(() =>
             {
@@ -21,7 +21,7 @@ namespace DiamondKata
         [Test]
         public void input_b()
         {
-            var result = Diamond.GetLines("B");
+            var result =  Diamond.Diamond.GetLines("B");
 
             Assert.Multiple(() =>
             {
@@ -35,7 +35,7 @@ namespace DiamondKata
         [Test]
         public void input_c()
         {
-            var result = Diamond.GetLines("C");
+            var result =  Diamond.Diamond.GetLines("C");
 
             Assert.Multiple(() =>
             {
@@ -51,7 +51,7 @@ namespace DiamondKata
         [Test]
         public void input_d()
         {
-            var result = Diamond.GetLines("D");
+            var result =  Diamond.Diamond.GetLines("D");
 
             Assert.Multiple(() =>
             {
@@ -70,7 +70,7 @@ namespace DiamondKata
         [Test]
         public void input_e()
         {
-            var result = Diamond.GetLines("E");
+            var result =  Diamond.Diamond.GetLines("E");
 
             Assert.Multiple(() =>
             {
