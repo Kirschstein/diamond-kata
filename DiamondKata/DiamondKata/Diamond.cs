@@ -8,15 +8,17 @@ public static class Diamond
     {
         if (input == "D")
         {
+            var index = Alphabet.IndexOf(input[0]);
+
             return new[]
             {
-                PadOuter("A", 3), 
+                PadOuter("A", index), 
                 PadOuter(PadInner("B"), 2), 
                 PadOuter(PadInner("C"), 1), 
                 PadOuter(PadInner("D"), 0), 
                 PadOuter(PadInner("C"), 1), 
                 PadOuter(PadInner("B"), 2), 
-                PadOuter("A", 3),
+                PadOuter("A", index),
             };
         }            
         if (input == "C")
