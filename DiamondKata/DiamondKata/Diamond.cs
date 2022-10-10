@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 
 namespace DiamondKata;
@@ -21,27 +22,22 @@ public static class Diamond
 
         yield return PadOuter("A", index);
 
-        if (index == 3)
+        var countdown = index - 1;
+
+        while (countdown > 0)
         {
-            yield return PadOuter(PadInner(Alphabet[3 - 2]), 3 - 1);
-            yield return PadOuter(PadInner(Alphabet[3 - 1]), 3 - 2);
-        }
-        if (index == 2)
-        {
-            yield return PadOuter(PadInner(Alphabet[2 - 1]), 2 - 1); 
+            yield return PadOuter(PadInner(Alphabet[index - countdown]), countdown);
+            countdown--;
         }
 
         yield return PadOuter(PadInner(input), index - index);
 
-        if (index == 2)
-        {
-            yield return PadOuter(PadInner(Alphabet[2 - 1]), 2 - 1);
-        }
+        var countup = 1;
 
-        if (index == 3)
+        while (countup < index)
         {
-            yield return PadOuter(PadInner(Alphabet[3 - 1]), 3 - 2);
-            yield return PadOuter(PadInner(Alphabet[3 - 2]), 3 - 1);
+            yield return PadOuter(PadInner(Alphabet[index - countup]), countup);
+            countup++;
         }
 
         yield return PadOuter("A", index);
