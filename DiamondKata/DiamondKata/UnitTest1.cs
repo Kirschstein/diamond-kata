@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using NUnit.Framework;
 
 namespace DiamondKata
@@ -72,11 +74,11 @@ namespace DiamondKata
                 return new[]
                 {
                     PadOuter("A", 3),
-                    PadOuter(PadInner("B", 1), 2),
-                    PadOuter(PadInner("C", 3), 1),
-                    PadOuter(PadInner("D", 5), 0),
-                    PadOuter(PadInner("C", 3), 1),
-                    PadOuter(PadInner("B", 1), 2),
+                    PadOuter(PadInner("B"), 2),
+                    PadOuter(PadInner("C"), 1),
+                    PadOuter(PadInner("D"), 0),
+                    PadOuter(PadInner("C"), 1),
+                    PadOuter(PadInner("B"), 2),
                     PadOuter("A", 3),
                 };
             }            
@@ -85,9 +87,9 @@ namespace DiamondKata
                 return new[]
                 {
                     PadOuter("A", 2),
-                    PadOuter(PadInner("B", 1), 1),
-                    PadOuter(PadInner("C", 3), 0),
-                    PadOuter(PadInner("B", 1), 1),
+                    PadOuter(PadInner("B"), 1),
+                    PadOuter(PadInner("C"), 0),
+                    PadOuter(PadInner("B"), 1),
                     PadOuter("A", 2),
                 };
             }            
@@ -96,15 +98,29 @@ namespace DiamondKata
                 return new[]
                 {
                     PadOuter("A", 1),
-                    PadOuter(PadInner("B", 1), 0),
+                    PadOuter(PadInner("B"), 0),
                     PadOuter("A", 1),
                 };
             }
             return new [] { "A" };
         }
 
-        private static string PadInner(string str, int innerWidth)
+        private static string PadInner(string str)
         {
+            var innerWidth = 0;
+            if (str == "B")
+            {
+                innerWidth = 1;
+            }
+            if (str == "C")
+            {
+                innerWidth = 3;
+            }
+            if (str == "D")
+            {
+                innerWidth = 5;
+            }
+            
             var whitespace = "".PadRight(innerWidth, ' ');
             return $"{str}{whitespace}{str}";
         }
