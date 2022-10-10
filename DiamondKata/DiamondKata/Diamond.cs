@@ -28,7 +28,7 @@ public static class Diamond
         }
         if (input == "C")
         {
-            yield return PadOuter(PadInner("B"), index - 1); 
+            yield return PadOuter(PadInner(Alphabet[index - 1].ToString()), index - 1); 
         }
 
         yield return PadOuter(PadInner(input), index - index);
