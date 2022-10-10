@@ -6,7 +6,7 @@ namespace DiamondKata;
 
 public static class Diamond
 {
-    private static string Alphabet = "ABCD";
+    private static string Alphabet = "ABCDE";
 
     public static string[] GetLines(string targetLetter)
     {

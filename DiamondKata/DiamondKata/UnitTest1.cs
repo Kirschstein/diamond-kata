@@ -67,5 +67,25 @@ namespace DiamondKata
 
             });
         }
+
+        [Test]
+        public void input_e()
+        {
+            var result = Diamond.GetLines("E");
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(result.Length, Is.EqualTo(9));
+                Assert.That(result[0], Is.EqualTo("    A    "));
+                Assert.That(result[1], Is.EqualTo("   B B   "));
+                Assert.That(result[2], Is.EqualTo("  C   C  "));
+                Assert.That(result[3], Is.EqualTo(" D     D "));
+                Assert.That(result[4], Is.EqualTo("E       E"));
+                Assert.That(result[5], Is.EqualTo(" D     D "));
+                Assert.That(result[6], Is.EqualTo("  C   C  "));
+                Assert.That(result[7], Is.EqualTo("   B B   "));
+                Assert.That(result[8], Is.EqualTo("    A    "));
+            });
+        }
     }
 }
