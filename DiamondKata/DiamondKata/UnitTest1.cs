@@ -71,39 +71,45 @@ namespace DiamondKata
             {
                 return new[]
                 {
-                    Pad("A", 3),
-                    Pad("B B", 2),
-                    Pad("C   C", 1),
-                    Pad("D     D", 0),
-                    Pad("C   C", 1),
-                    Pad("B B", 2),
-                    Pad("A", 3),
+                    PadOuter("A", 3),
+                    PadOuter(PadInner("B", 1), 2),
+                    PadOuter(PadInner("C", 3), 1),
+                    PadOuter(PadInner("D", 5), 0),
+                    PadOuter(PadInner("C", 3), 1),
+                    PadOuter(PadInner("B", 1), 2),
+                    PadOuter("A", 3),
                 };
             }            
             if (input == "C")
             {
                 return new[]
                 {
-                    Pad("A", 2),
-                    Pad("B B", 1),
-                    Pad("C   C", 0),
-                    Pad("B B", 1),
-                    Pad("A", 2),
+                    PadOuter("A", 2),
+                    PadOuter(PadInner("B", 1), 1),
+                    PadOuter(PadInner("C", 3), 0),
+                    PadOuter(PadInner("B", 1), 1),
+                    PadOuter("A", 2),
                 };
             }            
             if (input == "B")
             {
                 return new[]
                 {
-                    Pad("A", 1),
-                    Pad("B B", 0),
-                    Pad("A", 1),
+                    PadOuter("A", 1),
+                    PadOuter(PadInner("B", 1), 0),
+                    PadOuter("A", 1),
                 };
             }
             return new [] { "A" };
         }
 
-        private static string Pad(string str, int paddingLength)
+        private static string PadInner(string str, int innerWidth)
+        {
+            var whitespace = "".PadRight(innerWidth, ' ');
+            return $"{str}{whitespace}{str}";
+        }
+
+        private static string PadOuter(string str, int paddingLength)
         {
             var whitespace = "".PadRight(paddingLength, ' ');
             return $"{whitespace}{str}{whitespace}";
