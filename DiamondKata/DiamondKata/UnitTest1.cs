@@ -8,12 +8,6 @@ namespace DiamondKata
     {
 
         [Test]
-        public void b_is_char_value_x()
-        {
-            Assert.That("B"[0], Is.EqualTo(66));
-        }
-
-        [Test]
         public void input_a()
         {
             var result = GetLines("A");
@@ -115,19 +109,20 @@ namespace DiamondKata
         private static string PadInner(string str)
         {
             var innerWidth = 0;
+            var bValue = "B"[0];
             var charValue = str[0];
 
             if (str == "B")
             {
-                innerWidth = charValue - 65;
+                innerWidth = charValue - bValue + 1;
             }
             if (str == "C")
             {
-                innerWidth = charValue - 64;
+                innerWidth = charValue  - bValue + 2;
             }
             if (str == "D")
             {
-                innerWidth = charValue - 63;
+                innerWidth = charValue - bValue + 3;
             }
             
             var whitespace = "".PadRight(innerWidth, ' ');
