@@ -2,6 +2,8 @@ namespace DiamondKata;
 
 public static class Diamond
 {
+    private static string Alphabet = "ABCD";
+
     public static string[] GetLines(string input)
     {
         if (input == "D")
@@ -44,7 +46,7 @@ public static class Diamond
     {
         var bValue = "B"[0];
         var letterValue = letter[0];
-        var index = "ABCD".IndexOf(letterValue);
+        var index = Alphabet.IndexOf(letterValue);
 
         var innerWidth = letterValue - bValue + index;
 
