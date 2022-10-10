@@ -13,11 +13,11 @@ public static class Diamond
             return new[]
             {
                 PadOuter("A", index), 
-                PadOuter(PadInner("B"), 2), 
-                PadOuter(PadInner("C"), 1), 
-                PadOuter(PadInner("D"), 0), 
-                PadOuter(PadInner("C"), 1), 
-                PadOuter(PadInner("B"), 2), 
+                PadOuter(PadInner("B"), index - 1), 
+                PadOuter(PadInner("C"), index - 2), 
+                PadOuter(PadInner("D"), index - index), 
+                PadOuter(PadInner("C"), index - 2), 
+                PadOuter(PadInner("B"), index - 1), 
                 PadOuter("A", index),
             };
         }            
