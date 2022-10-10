@@ -28,7 +28,7 @@ public static class Diamond
         }
         if (input == "C")
         {
-            yield return PadOuter(PadInner(Alphabet[index - 1].ToString()), index - 1); 
+            yield return PadOuter(PadInner(Alphabet[index - 1]), index - 1); 
         }
 
         yield return PadOuter(PadInner(input), index - index);
@@ -48,14 +48,19 @@ public static class Diamond
 
     private static string PadInner(string letter)
     {
-        var bValue = "B"[0];
         var letterValue = letter[0];
+        return PadInner(letterValue);
+    }
+
+    private static string PadInner(char letterValue)
+    {
+        var bValue = "B"[0];
         var index = Alphabet.IndexOf(letterValue);
 
         var innerWidth = letterValue - bValue + index;
 
         var whitespace = "".PadRight(innerWidth, ' ');
-        return $"{letter}{whitespace}{letter}";
+        return $"{letterValue}{whitespace}{letterValue}";
     }
 
     private static string PadOuter(string str, int paddingLength)
