@@ -8,39 +8,51 @@ public static class Diamond
 {
     private static string Alphabet = "ABCD";
 
-    public static string[] GetLines(string input)
+    public static string[] GetLines(string targetLetter)
     {
-        if (input == "A")
+        if (targetLetter == "A")
             return new [] { "A" };
 
-        return GetStringsAsEnumerable(input).ToArray();
+        return GetDiamondLines(targetLetter).ToArray();
     }
 
-    private static IEnumerable<string> GetStringsAsEnumerable(string input)
+    private static IEnumerable<string> GetDiamondLines(string targetLetter)
     {
-        var index = Alphabet.IndexOf(input[0]);
+        var index = Alphabet.IndexOf(targetLetter[0]);
+        foreach (var row in CreateRowsUpToInput(index)) yield return row;
+        yield return CreateInnerRow(targetLetter);
+        foreach (var row in CreateRowsDownFromInput(index)) yield return row;
+    }
 
-        yield return PadOuter("A", index);
+    private static string CreateInnerRow(string input)
+    {
+        return PadOuter(PadInner(input), 0);
+    }
 
-        var countdown = index - 1;
+    private static IEnumerable<string> CreateRowsDownFromInput(int targetLetter)
+    {
+        var i = 1;
 
-        while (countdown > 0)
+        while (i < targetLetter)
         {
-            yield return PadOuter(PadInner(Alphabet[index - countdown]), countdown);
-            countdown--;
+            yield return PadOuter(PadInner(Alphabet[targetLetter - i]), i);
+            i++;
         }
 
-        yield return PadOuter(PadInner(input), index - index);
+        yield return PadOuter("A", targetLetter);
+    }
 
-        var countup = 1;
+    private static IEnumerable<string> CreateRowsUpToInput(int targetLetter)
+    {
+        yield return PadOuter("A", targetLetter);
 
-        while (countup < index)
+        var i = targetLetter - 1;
+
+        while (i > 0)
         {
-            yield return PadOuter(PadInner(Alphabet[index - countup]), countup);
-            countup++;
+            yield return PadOuter(PadInner(Alphabet[targetLetter - i]), i);
+            i--;
         }
-
-        yield return PadOuter("A", index);
     }
 
     private static string PadInner(string letter)
