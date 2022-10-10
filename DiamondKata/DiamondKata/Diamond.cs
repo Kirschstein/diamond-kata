@@ -25,7 +25,7 @@ public static class Diamond
         {
             yield return PadOuter(PadInner("B"), index - 1);
             yield return PadOuter(PadInner("C"), index - 2);
-            yield return PadOuter(PadInner("D"), index - index);
+            yield return PadOuter(PadInner(input), index - index);
             yield return PadOuter(PadInner("C"), index - 2);
             yield return PadOuter(PadInner("B"), index - 1);
 
@@ -33,12 +33,12 @@ public static class Diamond
         else if (input == "C")
         {
             yield return PadOuter(PadInner("B"), index - 1);
-            yield return PadOuter(PadInner("C"), index - index);
+            yield return PadOuter(PadInner(input), index - index);
             yield return PadOuter(PadInner("B"), index - 1);
         }
         else
         {
-            yield return PadOuter(PadInner("B"), index - index);
+            yield return PadOuter(PadInner(input), index - index);
         }
 
         yield return PadOuter("A", index);
