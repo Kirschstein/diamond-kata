@@ -23,22 +23,25 @@ public static class Diamond
         }            
         if (input == "C")
         {
+            var index = Alphabet.IndexOf(input[0]);
+
             return new[]
             {
-                PadOuter("A", 2), 
+                PadOuter("A", index),
                 PadOuter(PadInner("B"), 1), 
                 PadOuter(PadInner("C"), 0), 
                 PadOuter(PadInner("B"), 1), 
-                PadOuter("A", 2),
+                PadOuter("A", index),
             };
         }            
         if (input == "B")
         {
+            var index = Alphabet.IndexOf(input[0]);
             return new[]
             {
-                PadOuter("A", 1), 
+                PadOuter("A", index),
                 PadOuter(PadInner("B"), 0), 
-                PadOuter("A", 1),
+                PadOuter("A", index),
             };
         }
         return new [] { "A" };
