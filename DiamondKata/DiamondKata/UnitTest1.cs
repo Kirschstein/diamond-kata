@@ -106,28 +106,15 @@ namespace DiamondKata
             return new [] { "A" };
         }
 
-        private static string PadInner(string str)
+        private static string PadInner(string letter)
         {
-            var innerWidth = 0;
             var bValue = "B"[0];
-            var charValue = str[0];
-            var index = "ABCD".IndexOf(charValue);
+            var letterValue = letter[0];
+            var index = "ABCD".IndexOf(letterValue);
 
-            if (str == "B")
-            {
-                innerWidth = charValue - bValue + index;
-            }
-            if (str == "C")
-            {
-                innerWidth = charValue  - bValue + index;
-            }
-            if (str == "D")
-            {
-                innerWidth = charValue - bValue + index;
-            }
-            
+            var innerWidth = letterValue - bValue + index;
             var whitespace = "".PadRight(innerWidth, ' ');
-            return $"{str}{whitespace}{str}";
+            return $"{letter}{whitespace}{letter}";
         }
 
         private static string PadOuter(string str, int paddingLength)
