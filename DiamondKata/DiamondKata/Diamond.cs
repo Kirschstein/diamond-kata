@@ -23,8 +23,8 @@ public static class Diamond
 
         if (input == "D")
         {
-            yield return PadOuter(PadInner("B"), index - 1);
-            yield return PadOuter(PadInner("C"), index - 2);
+            yield return PadOuter(PadInner(Alphabet[index - 2]), index - 1);
+            yield return PadOuter(PadInner(Alphabet[index - 1]), index - 2);
         }
         if (input == "C")
         {
@@ -35,12 +35,13 @@ public static class Diamond
 
         if (input == "C")
         {
-            yield return PadOuter(PadInner("B"), index - 1);
+            yield return PadOuter(PadInner(Alphabet[index - 1]), index - 1);
         }
+
         if (input == "D")
         {
-            yield return PadOuter(PadInner("C"), index - 2);
-            yield return PadOuter(PadInner("B"), index - 1);
+            yield return PadOuter(PadInner(Alphabet[index - 1]), index - 2);
+            yield return PadOuter(PadInner(Alphabet[index - 2]), index - 1);
         }
 
         yield return PadOuter("A", index);
