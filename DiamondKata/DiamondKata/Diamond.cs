@@ -6,6 +6,10 @@ public static class Diamond
 
     public static string[] GetLines(string input)
     {
+        if (input == "A")
+            return new [] { "A" };
+
+
         if (input == "D")
         {
             var index = Alphabet.IndexOf(input[0]);
@@ -21,7 +25,7 @@ public static class Diamond
                 PadOuter("A", index),
             };
         }            
-        if (input == "C")
+        else if (input == "C")
         {
             var index = Alphabet.IndexOf(input[0]);
 
@@ -34,7 +38,7 @@ public static class Diamond
                 PadOuter("A", index),
             };
         }            
-        if (input == "B")
+        else
         {
             var index = Alphabet.IndexOf(input[0]);
             return new[]
@@ -44,7 +48,6 @@ public static class Diamond
                 PadOuter("A", index),
             };
         }
-        return new [] { "A" };
     }
 
     private static string PadInner(string letter)
